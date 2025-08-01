@@ -22,7 +22,7 @@ const FileUploader = ({ onTranscript }) => {
       const formData = new FormData();
       formData.append("audio", file);
 
-      const backendUrl = "http://localhost:4000";
+      const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
       const uploadRes = await axios.post(`${backendUrl}/api/audio/uploads`, formData);
       const { url } = uploadRes.data;//yaha destructuring ki hai 🧠 yeh data Axios ke response ka default part hota hai.
